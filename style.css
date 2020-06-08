@@ -1,0 +1,21 @@
+html,
+body {
+  margin: 0;
+  padding: auto;
+}
+#app {
+  padding-left: 8px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.line {
+  font-weight: bold;
+}
+
+.red-line {
+  color: red;
+}
