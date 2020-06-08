@@ -12,8 +12,8 @@ index.html
 
 a.html:
 
-![image-20200608085947056](https://gitee.com/cyh199910/personal_picture_bed/raw/master/img/image-20200608085947056.png)
+![image-20200608090642949](https://gitee.com/cyh199910/personal_picture_bed/raw/master/img/image-20200608090642949.png)
 
 b.html:
 
-![image-20200608090006040](https://gitee.com/cyh199910/personal_picture_bed/raw/master/img/image-20200608090006040.png)
+![image-20200608090651889](https://gitee.com/cyh199910/personal_picture_bed/raw/master/img/image-20200608090651889.png)
