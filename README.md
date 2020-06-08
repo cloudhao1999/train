@@ -4,6 +4,10 @@
 
 确保train工程有3个HTML文件index.html,a.html,b.html, index.html可以正常跳转到a.html和b.html。
 
+#### 链接：
+
+https://cloudhao1999.github.io/train/index.html
+
 #### 效果演示：
 
 index.html
