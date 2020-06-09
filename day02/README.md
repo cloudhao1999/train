@@ -4,7 +4,7 @@
 
 ### 项目地址
 
-https://cloudhao1999.github.io/coffeesell/
+https://cloudhao1999.github.io/train/day02/index.html
 
 ### 作品展示
 

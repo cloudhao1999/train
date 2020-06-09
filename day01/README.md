@@ -6,7 +6,7 @@
 
 #### 链接：
 
-https://cloudhao1999.github.io/train/index.html
+https://cloudhao1999.github.io/train/day01/index.html
 
 #### 效果演示：
 
