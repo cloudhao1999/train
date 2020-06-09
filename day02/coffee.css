@@ -1,0 +1,90 @@
+body,
+html,
+table {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  min-width: 780px;
+  width:920px;
+}
+table{
+    border-spacing:0;
+}
+/*头部*/
+.header {
+  background-image: url("./bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  text-align: center;
+  height: 125px;
+}
+.header img {
+  width: 55px;
+  vertical-align: text-bottom;
+}
+.header-title {
+  color: white;
+  font-size: 38px;
+  font-family: "宋体";
+  font-weight: bold;
+}
+/*左侧列表*/
+.coffee-list {
+  background-image: url("./left-bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 300px;
+  float: left;
+  height: 100%;
+  padding: 0;
+  background-color: #eff3fc;
+}
+.coffee-list ul {
+  padding-left: 50px;
+  line-height: 30px;
+}
+
+.coffee-list ul li a {
+  font-family: "宋体";
+  font-weight: bolder;
+}
+
+.coffee-list ul:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+.no-line {
+    text-decoration: none;
+    color: black;
+  }
+/*右侧内容*/
+.coffee-content{
+  padding: 20px 20px;
+}
+.coffee-content p {
+  font-size: 25px;
+  font-family: "宋体";
+  font-weight: bolder;
+  padding: 0px 10px;
+}
+.coffee-content img {
+  width: 550px;
+  height: 400px;
+  padding: 5px 10px;
+}
+/*底部*/
+.buttom {
+  background-color: gray;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+.buttom span {
+  color: white;
+  font-family: "宋体";
+  font-weight: bold;
+}
+

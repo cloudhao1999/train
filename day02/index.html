@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小卖部开业啦~</title>
+    <link rel="stylesheet" href="./coffee.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <script src="./vue.js"></script>
+    <script src="./show.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <table>
+        <tr>
+          <td colspan="2" class="header">
+            <img src="./latiao.png" alt="logo" />
+            <span class="header-title">陈昀昊的小卖部</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="coffee-list">
+            <ul v-for="(item,i) in coffeeDet" :key="i">
+              <li @click="change(item.coffeeId)">
+                <a>{{ item.coffeeName }}</a>
+              </li>
+            </ul>
+          </td>
+          <td class="coffee-content">
+            <img :src="selectCoffee.coffeeImg" alt="咖啡" />
+            <p>{{selectCoffee.coffeeName}}</p>
+            <span
+              >{{selectCoffee.coffeeContent}}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="buttom">
+            <span>版权所有&nbsp;©&nbsp;陈昀昊</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            coffeelist: [
+              {
+                coffeeId: 1,
+                coffeeName: "辣条",
+              },
+              {
+                coffeeId: 2,
+                coffeeName: "QQ糖",
+              },
+              {
+                coffeeId: 3,
+                coffeeName: "大白兔奶糖",
+              },
+              {
+                coffeeId: 4,
+                coffeeName: "大大卷",
+              },
+              {
+                coffeeId: 5,
+                coffeeName: "旺仔牛奶",
+              },
+            ],
+            coffeeDet: [
+              {
+                coffeeId: 1,
+                coffeeName: "辣条",
+                coffeeImg: "./latiao.jpg",
+                coffeeContent:
+                  "辣条又叫大面筋、素牛筋等，它是以小麦粉或其他谷物、豆类为主要原料做成的一种食品。 [1]  辣条是一种零食。辣条含有大量食品添加剂（十几种、二十种）。 [1]  尚无统一制作标准，市面上辣条厂家一般按照地标执行生产，执行标准一般为DB41/T515-2007和GB2760。湖南农业大学食品科学技术学院原院长夏延斌说，辣条是面粉加水、加盐、加糖挤压熟化出来，然后调味而成的产品，是农产品加工的零食。关于添加剂，只要按国家标准添加都不会对人身健康有影响，所以不能说辣条是垃圾食品。 [2] 近年来，在网络文化的催化下，辣条被奉为“童年味道”的象征，以500亿元年产值成为休闲零食中头号“网红”。",
+              },
+              {
+                coffeeId: 2,
+                coffeeName: "QQ糖",
+                coffeeImg: "./qqt.jpg",
+                coffeeContent:
+                  "垃圾明胶，通常是指工业明胶，这些明胶都是由碎皮料来制作的，在加工过程中也会产生大量的有害物质，严重危害人体的健康。其中，最重要的有害物质是指重金属物质，主要包括重金属铅和铬。铬：铬对人体肾脏、肝脏以及神经系统都有很大影响。铬会对人体皮肤造成溃疡，或者硬气铬性皮炎及湿疹。另外误食入六价铬化合物可引起口腔粘膜增厚，水肿形成黄色痂皮，反胃呕吐，有时带血，剧烈腹痛，肝肿大，严重时使循环衰竭，失去知觉，甚至死亡。六价铬化合物在吸入时是有致癌性的，会造成肺癌。铅：铅中毒可能会导致胃疼，头痛，颤抖，神经性烦躁突触数量降低，在最严重的情况下，可能人事不省，直至死亡。在很低的浓度下，铅的慢性长期健康效应表现为：影响大脑和神经系统。另外儿童发生铅中毒的概率更是比成年人高三十多倍，铅中毒会影响孩子的说话能力、记忆力和注意力等。",
+              },
+              {
+                coffeeId: 3,
+                coffeeName: "大白兔奶糖",
+                coffeeImg: "./tutu.jpg",
+                coffeeContent:
+                  "大白兔奶糖是位于中国大陆上海冠生园出品的奶类糖果，1959年开始发售以来深受各地人民欢迎。商标是一只跳跃状的白兔，形象深入民心。大白兔奶糖是白色、有嚼劲的圆柱形奶糖，质感类似西方的鸟结糖，长约3厘米、直径约1厘米，每颗用可吃的米纸包着，再用包装纸包好。每颗糖果热量20卡路里（84焦耳）。2018年9月7日，上海知名老字号冠生园食品宣布大白兔奶糖将和美加净跨界合作，推出联名款——美加净牌大白兔奶糖味润唇膏 [1]  。",
+              },
+              {
+                coffeeId: 4,
+                coffeeName: "大大卷",
+                coffeeImg: "./dadajuan.jpg",
+                coffeeContent:
+                  "“大大”（TaTa）泡泡糖是箭牌公司于2004年收购西班牙亚古利民糖果集团旗下佳口公司部分产品后，并入箭牌家族的品牌产品。1998年，“大大”泡泡糖在中国面世。1999年，“大大超人”诞生，带来超软泡泡糖。2003年下半年，“大大”又推出了“大大奇彩”特软泡泡糖。同年11月，推出果冻泡泡糖，把一层爽滑的果冻“ 80,90后的回忆 灌注”到泡泡糖里面。2004年下半年“大大”推出的什锦泡泡糖，能吹出达七种颜色。 2006年9月，“大大”新推出了混合口味的“梦幻2味”。 “大大卷”产品1993年在中国市场面世，1997年“大大卷”推出玩具赠品，多年来“大大卷”不断努力，以“盒盒有惊喜”的概念，在每一卷产品中都送给小朋友一个新奇好玩的卡通玩具。“大大卷”成为泡泡糖产品的领导品牌之一。",
+              },
+              {
+                coffeeId: 5,
+                coffeeName: "旺仔牛奶",
+                coffeeImg: "./wangzai.jpg",
+                coffeeContent:
+                  "1992年，台资企业中国旺旺（00151.HK）来到大陆，首先在湖南设立工厂，主力产品旺旺雪饼和旺仔牛奶马上在全国流行。也就是在那时，70后、80后们在电视上开始看到李子明的妈妈，不断到学校送两罐旺仔牛奶，以及某个小朋友不断吃雪饼的广告画面。李子明都已从一个喝奶的小孩,变成小学老师了,旺仔牛奶还是那罐旺仔牛奶。 中国旺旺的主力产品旺仔牛奶从上世纪90年代推向市场,业绩坐着火箭直蹿上天。",
+              },
+            ],
+            selectCoffee: {
+              coffeeId: 1,
+              coffeeName: "辣条",
+              coffeeImg: "./latiao.png",
+              coffeeContent:
+              "辣条又叫大面筋、素牛筋等，它是以小麦粉或其他谷物、豆类为主要原料做成的一种食品。 [1]  辣条是一种零食。辣条含有大量食品添加剂（十几种、二十种）。 [1]  尚无统一制作标准，市面上辣条厂家一般按照地标执行生产，执行标准一般为DB41/T515-2007和GB2760。湖南农业大学食品科学技术学院原院长夏延斌说，辣条是面粉加水、加盐、加糖挤压熟化出来，然后调味而成的产品，是农产品加工的零食。关于添加剂，只要按国家标准添加都不会对人身健康有影响，所以不能说辣条是垃圾食品。 [2] 近年来，在网络文化的催化下，辣条被奉为“童年味道”的象征，以500亿元年产值成为休闲零食中头号“网红”。",
+            },
+          };
+        },
+        created() {
+          this.change(1);
+        },
+        methods: {
+          change(id) {
+            this.coffeeDet.forEach((cof) => {
+              if (id === cof.coffeeId) {
+                this.selectCoffee = cof;
+              }
+            });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
