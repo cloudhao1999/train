@@ -80,6 +80,16 @@ html {
   font-size: 23px;
   font-weight: bold;
 }
+.content-title::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 40px);
+  height: 5px;
+  width: 80px;
+  background-color: #df4358c0;
+}
+
 .content-movie {
   width: 100%;
   display: flex;
