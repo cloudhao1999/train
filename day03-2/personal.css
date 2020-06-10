@@ -1,0 +1,128 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-width: 1173px;
+}
+/*头部*/
+.header {
+  background-color: #FF4C4F;
+  width: 100%;
+  height: 60px;
+}
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  padding:15px 100px;
+}
+
+.header .header-box .header-box-left{
+  width: 75%;
+}
+
+.header .header-box .header-box-right{
+  width: 25%;
+}
+
+.header .header-box .header-box-left span{
+  color: white;
+}
+
+.header .header-box .header-box-right a{
+  color: white;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.header .header-box .header-title {
+  color: skyblue;
+  font-size: 28px;
+  font-weight: bold;
+}
+/*中间内容*/
+.content{
+  width: 80%;
+  padding-left: 10%;
+}
+.content p{
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+}
+.content-movie{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+
+}
+.content-movie-det{
+  background-color: #FEF0EF;
+  width: 300px;
+  display: flex;
+  margin: 0 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: -20px;
+}
+
+.content-movie-det img{
+  width: 290px;
+  height: 420px;
+}
+
+.content-book{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.content-book-det{
+  background-color: #FEF0EF;
+  width: 300px;
+  display: flex;
+  margin: 0 10px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-book-det img{
+  width: 290px;
+  height: 420px;
+}
+
+/*底部*/
+.button {
+  background-color: #810014;
+  width: 100%;
+  height: 255px;
+  text-align: center;
+}
+.button .button-text {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.button .button-text .button-text-left{
+  width: 80%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 70px;
+}
+.button .button-text .button-text-left span{
+  text-align: left;
+  width: 600px;
+}
+.button .button-text .button-text-right{
+  width: 20%;
+  margin-top: 30px;
+}
+
