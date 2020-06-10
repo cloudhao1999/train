@@ -1,16 +1,16 @@
-body{
+body {
   margin: 0;
   padding: 0;
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-html{
-  overflow: auto; 
+html {
+  overflow: auto;
 }
 /*头部*/
 .header {
-  background-color: #FF4C4F;
+  background-color: #ff4c4f;
   width: 100%;
   height: 60px;
 }
@@ -18,22 +18,48 @@ html{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding:15px 100px;
+  padding: 15px 100px;
+}
+@media screen and (max-width: 700px) {
+  .header-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 0;
+    width: 100%;
+  }
+  .header .header-box .header-box-right {
+    display: none;
+  }
+  .header .header-box .header-box-left {
+    width: 100%;
+    margin-left: 35px;
+    text-align: center;
+  }
+  .button .button-text .button-text-left {
+    text-align: left;
+    padding-left: 0;
+  }
+  .button .button-text .button-text-left .button-text-left-text {
+    width: 250px;
+    padding-left: 10px;
+    text-align: left;
+  }
 }
 
-.header .header-box .header-box-left{
+.header .header-box .header-box-left {
   width: 75%;
 }
 
-.header .header-box .header-box-right{
+.header .header-box .header-box-right {
   width: 25%;
 }
 
-.header .header-box .header-box-left span{
+.header .header-box .header-box-left span {
   color: white;
 }
 
-.header .header-box .header-box-right a{
+.header .header-box .header-box-right a {
   color: white;
   margin-left: 5px;
   text-decoration: none;
@@ -45,25 +71,24 @@ html{
   font-weight: bold;
 }
 /*中间内容*/
-.content{
+.content {
   width: 80%;
   margin: 0 auto;
 }
-.content p{
+.content p {
   text-align: center;
   font-size: 23px;
   font-weight: bold;
 }
-.content-movie{
+.content-movie {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 30px;
-
 }
-.content-movie-det{
-  background-color: #FEF0EF;
+.content-movie-det {
+  background-color: #fef0ef;
   display: flex;
   margin: 0 10px;
   justify-content: center;
@@ -71,13 +96,12 @@ html{
   flex-direction: column;
 }
 
-
-.content-movie-det img{
+.content-movie-det img {
   width: 260px;
   height: 420px;
 }
 
-.content-book{
+.content-book {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -86,8 +110,8 @@ html{
   padding-top: 30px;
 }
 
-.content-book-det{
-  background-color: #FEF0EF;
+.content-book-det {
+  background-color: #fef0ef;
   display: flex;
   margin: 0 10px;
   justify-content: center;
@@ -95,7 +119,7 @@ html{
   align-items: center;
 }
 
-.content-book-det img{
+.content-book-det img {
   width: 260px;
   height: 420px;
 }
@@ -108,25 +132,29 @@ html{
   text-align: center;
 }
 .button .button-text {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
+  margin: 0 auto;
 }
 
-.button .button-text .button-text-left{
+.button .button-text .button-text-left {
   color: white;
   font-size: 18px;
   font-weight: bold;
   padding-top: 70px;
 }
-.button .button-text .button-text-left span{
+.button .button-text .button-text-left .button-text-left-text {
+  width: 400px;
+  text-align: left;
+}
+.button .button-text .button-text-left span {
   text-align: left;
   width: 600px;
 }
-.button .button-text .button-text-right{
+.button .button-text .button-text-right {
   width: 20%;
   margin-top: 30px;
 }
-
