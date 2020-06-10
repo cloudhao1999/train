@@ -18,32 +18,6 @@ html {
   padding: 15px 100px;
   vertical-align: middle;
 }
-@media screen and (max-width: 700px) {
-  .header-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 15px 0;
-    width: 100%;
-  }
-  .header .header-box .header-box-right {
-    display: none;
-  }
-  .header .header-box .header-box-left {
-    width: 100%;
-    margin-left: 35px;
-    text-align: center;
-  }
-  .button .button-text .button-text-left {
-    text-align: left;
-    padding-left: 0;
-  }
-  .button .button-text .button-text-left .button-text-left-text {
-    width: 100%;
-    padding-left: 10px;
-    text-align: left;
-  }
-}
 
 .header .header-box .header-box-left {
   float: left;
@@ -99,7 +73,7 @@ html {
 .content-movie-det {
   background-color: #fef0ef;
   display: flex;
-  margin: 0 10px;
+  margin: 10px 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -122,7 +96,7 @@ html {
 .content-book-det {
   background-color: #fef0ef;
   display: flex;
-  margin: 0 10px;
+  margin: 10px 10px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -166,4 +140,31 @@ html {
   width: 20%;
   margin-top: 30px;
   margin-right: 75px;
+}
+
+/*自适应媒体调整*/
+@media screen and (max-width: 700px) {
+  .header-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 0;
+    width: 100%;
+  }
+  .header .header-box .header-box-right {
+    display: none;
+  }
+  .header .header-box .header-box-left {
+    width: 100%;
+    text-align: center;
+  }
+  .button .button-text .button-text-left {
+    text-align: left;
+    padding-left: 0;
+  }
+  .button .button-text .button-text-left .button-text-left-text {
+    width: 100%;
+    padding-left: 10px;
+    text-align: left;
+  }
 }
