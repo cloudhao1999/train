@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我是一个CMD！！！！</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <script src="./vue.js"></script>
+    <script src="./show.js"></script>
+    <link rel="stylesheet" href="./tv.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="title">
+        <span>C:\\Windows\System32\cmd.exe</span>
+        <div class="close" @click="run">
+          <span class="close-item1">-</span>
+          <span class="close-item2">口</span>
+          <span class="close-item3">X</span>
+        </div>
+      </div>
+      <div class="content">
+        <span>D:\文档\实训\第一周\Day04\弹幕墙></span><br/>
+        <span>D:\文档\实训\第一周\Day04\弹幕墙>我是一个命令行，但是我只能发弹幕~</span>
+        <div
+          class="danmu"
+          v-for="(danmu,index) in danmuGroup"
+          :key="index"
+          v-bind:style="{
+                animationName:'danmuAnimation',
+                animationDuration:danmu.time + 's',
+                animationTimingFunction:'linear',
+                animationDelay:index*0.5+'s',
+                animationIterationCount:'infinite',
+                animationPlayState:'running',
+                top:danmu.top +'%',
+            }"
+        >
+          <div class="contentArea">
+            <span class="text" v-bind:style="{color:danmu.color}">{{danmu.name}}说：{{danmu.content}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <div class="send">
+          <input class="inputtext" type="text" placeholder="求你了，发一个弹幕吧~" v-model="msg" />
+          <input class="inputtext" type="text" placeholder="你的昵称" v-model="name" />
+          <button @click="send(msg,name)">发送</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            danmuGroup: [
+              {
+                content: "老师好帅",
+                name: "陈昀昊",
+              },
+              {
+                content: "猪猪好帅",
+                name: "陈昀昊",
+              },
+              {
+                content: "老师好帅",
+                name: "陈昀昊",
+              },
+              {
+                content: "老师好帅",
+                name: "陈昀昊",
+              },
+            ],
+            msg: "",
+            name: "",
+          };
+        },
+        created() {
+          this.letDanmuMove(this.danmuGroup);
+        },
+        methods: {
+          letDanmuMove(danmu) {
+            let allDanmu = [];
+            danmu.forEach((singleDanmu) => {
+              let randomSecond = Math.floor(Math.random() * 10);
+              let continueTime = randomSecond < 15 ? 15 : randomSecond;
+              let top = Math.floor(Math.random() * 82) + 2;
+              const detail = {
+                time: continueTime,
+                top,
+                content: singleDanmu.content,
+                name: singleDanmu.name,
+                color:this.colorMaker()
+              };
+              allDanmu.push(detail);
+            });
+            this.danmuGroup = allDanmu;
+          },
+          send(msg,name) {
+            if(name === '' || name === undefined){
+                name = '匿名'
+            }
+            if(msg === '' || msg === undefined){
+                msg = '陈昀昊像吴彦祖'
+            }
+            let randomSecond = Math.floor(Math.random() * 10);
+            let continueTime = randomSecond < 15 ? 15 : randomSecond;
+            let top = Math.floor(Math.random() * 80) + 2;
+            const detail = {
+              time: continueTime,
+              top,
+              content: msg,
+              name,
+              color:this.colorMaker()
+            };
+            this.danmuGroup.push(detail);
+            this.msg = ''
+            this.name = ''
+          },
+           colorMaker(){
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			var color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
+			return color;
+        },
+        run(){
+            alert('假的关不了！')
+        }
+        },
+      });
+    </script>
+  </body>
+</html>

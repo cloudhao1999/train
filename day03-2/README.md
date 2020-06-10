@@ -4,7 +4,7 @@
 
 ### 项目地址
 
-https://cloudhao1999.github.io/favorite/
+https://cloudhao1999.github.io/train/day03-2/index.html
 
 ### 作品展示
 
