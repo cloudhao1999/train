@@ -1,9 +1,12 @@
-html,body{
+body{
   margin: 0;
   padding: 0;
-  position: relative;
   height: auto;
   overflow-x: hidden;
+  overflow-y: hidden;
+}
+html{
+  overflow: auto; 
 }
 /*头部*/
 .header {
