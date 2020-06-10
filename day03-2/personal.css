@@ -4,6 +4,7 @@ body {
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
+  min-width: 380px;
 }
 html {
   overflow: auto;
