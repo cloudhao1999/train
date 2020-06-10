@@ -42,7 +42,8 @@ html {
 }
 /*中间内容*/
 .content{
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 .content p{
   text-align: center;
@@ -64,7 +65,6 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-left: -20px;
 }
 
 
@@ -92,7 +92,7 @@ html {
 }
 
 .content-book-det img{
-  width: 290px;
+  width: 260px;
   height: 420px;
 }
 
