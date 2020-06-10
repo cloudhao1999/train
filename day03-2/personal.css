@@ -211,7 +211,7 @@ html {
   }
   .button .button-text .button-text-left {
     text-align: left;
-    padding-left: 0;
+    padding-right: 6px;
   }
   .button .button-text .button-text-left .button-text-left-text {
     width: 100%;
