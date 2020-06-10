@@ -43,6 +43,53 @@ html {
   font-size: 28px;
   font-weight: bold;
 }
+.header .header-box .icon-mobile {
+  float: right;
+  visibility: hidden;
+}
+
+.header .header-box .icon-mobile {
+  float: right;
+  padding: 5px;
+  visibility: hidden;
+  position: relative;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.header .header-box .dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.header .header-box .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 70px;
+  z-index: 99;
+  top:30px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header .header-box .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.header .header-box .icon-mobile:hover .dropdown-content {
+  display: block;
+}
+
 /*中间内容*/
 .content {
   width: 80%;
@@ -155,8 +202,9 @@ html {
     display: none;
   }
   .header .header-box .header-box-left {
-    width: 100%;
+    width: 60%;
     text-align: center;
+    padding-left: 65px;
   }
   .button .button-text .button-text-left {
     text-align: left;
@@ -166,5 +214,11 @@ html {
     width: 100%;
     padding-left: 10px;
     text-align: left;
+  }
+  .header .header-box .icon-mobile {
+    float: right;
+    padding-top: 5px;
+    visibility: visible;
+    position: relative;
   }
 }
