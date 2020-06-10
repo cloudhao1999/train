@@ -9,4 +9,4 @@ day02使用table布局一个项目：https://cloudhao1999.github.io/train/day02/
 
 day03使用div修改上一个项目：https://cloudhao1999.github.io/train/day03/index.html
 
-使用vue制作的弹幕墙：https://cloudhao1999.github.io/train/day05/index.html
+day05使用vue制作的弹幕墙：https://cloudhao1999.github.io/train/day05/index.html
