@@ -22,6 +22,7 @@ html {
 
 .header .header-box .header-box-left {
   float: left;
+  vertical-align: middle;
 }
 
 .header .header-box .header-box-right {
