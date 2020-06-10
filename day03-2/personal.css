@@ -15,10 +15,8 @@ html {
   height: 60px;
 }
 .header-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   padding: 15px 100px;
+  vertical-align: middle;
 }
 @media screen and (max-width: 700px) {
   .header-box {
@@ -48,11 +46,12 @@ html {
 }
 
 .header .header-box .header-box-left {
-  width: 75%;
+  float: left;
 }
 
 .header .header-box .header-box-right {
-  width: 25%;
+  float: right;
+  padding-top: 5px;
 }
 
 .header .header-box .header-box-left span {
