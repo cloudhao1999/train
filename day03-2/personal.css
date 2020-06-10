@@ -3,7 +3,6 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  min-width: 1173px;
 }
 /*头部*/
 .header {
@@ -13,6 +12,7 @@ html {
 }
 .header-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding:15px 100px;
 }
@@ -42,8 +42,7 @@ html {
 }
 /*中间内容*/
 .content{
-  width: 80%;
-  padding-left: 10%;
+  width: 100%;
 }
 .content p{
   text-align: center;
@@ -53,13 +52,13 @@ html {
 .content-movie{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 30px;
 
 }
 .content-movie-det{
   background-color: #FEF0EF;
-  width: 300px;
   display: flex;
   margin: 0 10px;
   justify-content: center;
@@ -68,14 +67,16 @@ html {
   padding-left: -20px;
 }
 
+
 .content-movie-det img{
-  width: 290px;
+  width: 260px;
   height: 420px;
 }
 
 .content-book{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-bottom: 20px;
   padding-top: 30px;
@@ -83,7 +84,6 @@ html {
 
 .content-book-det{
   background-color: #FEF0EF;
-  width: 300px;
   display: flex;
   margin: 0 10px;
   justify-content: center;
@@ -100,18 +100,18 @@ html {
 .button {
   background-color: #810014;
   width: 100%;
-  height: 255px;
+  height: 320px;
   text-align: center;
 }
 .button .button-text {
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
 }
 
 .button .button-text .button-text-left{
-  width: 80%;
   color: white;
   font-size: 18px;
   font-weight: bold;
