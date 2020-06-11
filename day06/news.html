@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./libs/scrollReveal/scrollreveal.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="./libs/vue/vue.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css"
@@ -29,61 +31,38 @@
           <div class="burger-line3"></div>
         </div>
       </header>
-     
-      <div class="content-wrapper">
-        
 
+      <div class="content-wrapper">
         <section id="company-activities" class="company-activities">
           <h2 class="title1">公司动态</h2>
           <p class="intro">关注公司动态，第一时间获取一手消息</p>
           <div class="activities">
-            <div class="activity">
+            <div
+              class="activity"
+              v-for="(article,index) in articleList"
+              :key="index"
+            >
               <div class="act-image-wrapper">
-                <img src="./images/activity01-image.jpg" alt="" />
+                <img
+                  :src="'https://mjuruankai.com'+article.fields.cover_image"
+                  alt=""
+                />
               </div>
               <div class="meta">
                 <p class="data-published">
                   <i class="far fa-calendar"></i>2019年12月1日
                 </p>
-                <p class="comments"><i class="far fa-comments"></i> 33条评论</p>
-              </div>
-              <h2 class="act-title">提供互联网接入的ISP公司</h2>
-              <article>
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-              </article>
-            <button class="readmore-btn" onclick="{window.location.href='./news-detail.html'}">阅读更多</button>
-            </div>
-            <div class="activity">
-              <div class="act-image-wrapper">
-                <img src="./images/watercrafts-on-river-3464632.jpg" alt="" />
-              </div>
-              <div class="meta">
-                <p class="data-published">
-                  <i class="far fa-calendar"></i>2019年12月1日
+                <p class="comments">
+                  <i class="far fa-comments"></i> {{article.fields.like}}条评论
                 </p>
-                <p class="comments"><i class="far fa-comments"></i> 33条评论</p>
               </div>
-              <h2 class="act-title">提供互联网接入的ISP公司</h2>
+              <h2 class="act-title">{{article.fields.title}}</h2>
               <article>
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
+                {{ replace(article.fields.content.slice(0, 42)) + "..." }}
               </article>
-              <button class="readmore-btn" onclick="{window.location.href='./news-detail.html'}">阅读更多</button>
-            </div>
-            <div class="activity">
-              <div class="act-image-wrapper">
-                <img src="./images/red-suspension-bridge-3493772.jpg" alt="" />
-              </div>
-              <div class="meta">
-                <p class="data-published">
-                  <i class="far fa-calendar"></i>2019年12月1日
-                </p>
-                <p class="comments"><i class="far fa-comments"></i> 33条评论</p>
-              </div>
-              <h2 class="act-title">提供互联网接入的ISP公司</h2>
-              <article>
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-              </article>
-              <button class="readmore-btn" onclick="{window.location.href='./news-detail.html'}">阅读更多</button>
+              <button class="readmore-btn" @click="read(article.pk)">
+                阅读更多
+              </button>
             </div>
           </div>
         </section>
@@ -141,6 +120,39 @@
         </div>
       </footer>
     </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            articleList: "",
+          };
+        },
+        created() {
+          this.getArticleList();
+        },
+        methods: {
+          async getArticleList() {
+            const res = await axios.get(
+              `https://mjuruankai.com/api/web/article_list/?page=1`
+            );
+            this.articleList = res.data.list;
+            console.log(this.articleList);
+          },
+          replace(str) {
+            let con = str.replace(/\s*/g, ""); //去掉空格
+            let res = con.replace(/<[^>]+>/g, ""); //去掉所有的html标记
+            let res1 = res.replace(/↵/g, ""); //去掉所有的↵符号
+            let res2 = res1.replace(/[\r\n]/g, ""); //去掉回车换行
+            return res2;
+          },
+          read(id){
+            localStorage.setItem('id',id);
+            window.location.href="./news-detail.html"
+          }
+        },
+      });
+    </script>
     <script src="./libs/isotope/isotope.pkgd.min.js"></script>
     <script src="./libs/anime/anime.min.js"></script>
     <script src="./libs/glide/glide.min.js"></script>

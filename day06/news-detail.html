@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./libs/scrollReveal/scrollreveal.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="./libs/vue/vue.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css"
@@ -35,35 +37,16 @@
           <div class="activities-det">
             <div class="activity-det">
               <div class="act-image-wrapper-det">
-                <img src="./images/activity01-image.jpg" alt="" />
+                <img :src="'https://mjuruankai.com'+article.cover_image" alt="" />
               </div>
-              <h2 class="act-title-det">提供互联网接入的ISP公司</h2>
+              <h2 class="act-title-det">{{article.title}}</h2>
               <div class="meta-det">
                 <p class="data-published-det">
                   <i class="far fa-calendar"></i>2019年12月1日
                 </p>
                 <p class="comments-det"><i class="far fa-comments"></i> 33条评论</p>
               </div>
-              <article>
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
-                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
+              <article v-html="article.content">
               </article>
             </div>
           </div>
@@ -122,6 +105,27 @@
         </div>
       </footer>
     </div>
+    <script>
+      new Vue({
+        el:'#app',
+        data(){
+          return{
+            article:""
+          }
+        },
+        created(){
+          this.getArticle()
+        },
+        methods:{
+          async getArticle(){
+            const id = localStorage.getItem('id')
+            const res =await axios.get(`https://mjuruankai.com/api/web/article_by_id/?id=${id}`);
+            this.article = res.data.list[0].fields
+            console.log(this.article)
+          }
+        }
+      })
+    </script>
     <script src="./libs/isotope/isotope.pkgd.min.js"></script>
     <script src="./libs/anime/anime.min.js"></script>
     <script src="./libs/glide/glide.min.js"></script>
