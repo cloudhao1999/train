@@ -11,7 +11,7 @@ img {
 }
 
 :root {
-  --primary-color: #ff434f;
+  --primary-color: #0083d0;
   --secondary-color: #e3e3e3;
   --text-color-lighttest: #e7e9ec;
   --text-color-darker: #2e2e2e;
@@ -202,6 +202,7 @@ section {
 /* 关于我们 */
 .about-us {
   margin-bottom: 32px;
+  margin-top: 120px;
 }
 
 .features {
@@ -234,6 +235,20 @@ section {
   grid-area: content;
   color: var(--text-color-gray);
   margin-top: 8px;
+}
+
+/* map */
+.map {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  width: 100vw;
+  height:50vw;
+}
+
+.map .map-content {
+  width: 100%;
+  height: 100%;
+  border: #ccc solid 1px;
 }
 
 /* 成功案例 */
@@ -410,6 +425,7 @@ section {
   align-items: center;
   position: relative;
   z-index: 20;
+  margin-top: 50px;
 }
 
 .data-section::before {
@@ -448,7 +464,7 @@ section {
 
 /* 公司动态 */
 .company-activities {
-  margin-top: 88px;
+  margin-top: 108px;
 }
 
 .activities {
@@ -498,6 +514,61 @@ section {
   border-radius: 4px;
   padding: 6px 14px;
   margin-top: 24px;
+}
+.activity:hover {
+  transform: translateY(-20px) scale(1.05);
+  box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* 新闻详情 */
+.company-activities-det {
+  margin-top: 108px;
+}
+
+.activities-det {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 24px;
+}
+.activity-det {
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: 0.4s;
+}
+.act-image-wrapper-det {
+  height: 255px;
+  overflow: hidden;
+  margin: -24px;
+  margin-bottom: 0;
+}
+.act-image-wrapper-det img {
+  min-height: 300px;
+  object-fit: cover;
+}
+.activity-det .meta-det {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: var(--text-color-light-gray);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.activity-det .meta-det .comments-det,.activity-det .meta-det .data-published-det{
+  margin-left: 20px;
+}
+
+.act-title-det {
+  color: var(--text-color-dark);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.activity-det article {
+  color: var(--text-color-gray);
+  letter-spacing: 0.54px;
+  line-height: 24px;
 }
 .activity:hover {
   transform: translateY(-20px) scale(1.05);
@@ -634,8 +705,8 @@ footer {
     opacity: 0;
   }
 
-  header.open nav > i.fas{
-      margin-top: 10px;
+  header.open nav > i.fas {
+    margin-top: 10px;
   }
 
   header.open .burger-line1,
@@ -667,120 +738,121 @@ footer {
   }
 
   @keyframes slideDown {
-      from{
-          height: 0;
-          opacity: 0;
-      }
-      to{
-          height: 100vh;
-          padding-top: 80px;
-          opacity: 1;
-      }
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: 100vh;
+      padding-top: 80px;
+      opacity: 1;
+    }
   }
   @keyframes showMenu {
-      from{
-          opacity: 0;
-          transform: translateY(-1vh);
-      }
-      to{
-          opacity: 1;
-          transform: translateY(0);
-      }
+    from {
+      opacity: 0;
+      transform: translateY(-1vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  .service-item .service-title{
-      font-size: 20px;
+  .service-item .service-title {
+    font-size: 20px;
   }
-  .service-item .service-content{
-      font-size: 14px;
-      line-height: 24px;
+  .service-item .service-content {
+    font-size: 14px;
+    line-height: 24px;
   }
-  .team-members{
-      grid-template-columns: repeat(2,1fr);
-      row-gap: 36px;
-      column-gap: 6vw;
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 36px;
+    column-gap: 6vw;
   }
-  .activities{
-      grid-template-columns: repeat(2,1fr);
-      row-gap: 36px;
+  .activities {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 36px;
   }
-
 }
 
-@media(max-width:992px){
-    .slide-caption h1{
-        font-size: 48px;
-    }
-    .slide-caption h3{
-        font-size: 18px;
-    }
-    .features,.services{
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: unset;
-    }
-    .data-section{
-        grid-template-columns: repeat(2,minmax(200px,auto));
-        padding: 24px 0;
-        height: auto;
-        row-gap: 24px;
-        background-size: 200%;
-    }
-    .showcases .case-item{
-        width: calc(100vw/3);
-    }
+@media (max-width: 992px) {
+  .slide-caption h1 {
+    font-size: 48px;
+  }
+  .slide-caption h3 {
+    font-size: 18px;
+  }
+  .features,
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+  }
+  .data-section {
+    grid-template-columns: repeat(2, minmax(200px, auto));
+    padding: 24px 0;
+    height: auto;
+    row-gap: 24px;
+    background-size: 200%;
+  }
+  .showcases .case-item {
+    width: calc(100vw / 3);
+  }
 }
 
-@media(max-width:768px){
-    section,.footer-menus{
-        padding: 0 40px;
-    }
+@media (max-width: 768px) {
+  section,
+  .footer-menus {
+    padding: 0 40px;
+  }
 
-    .footer-menus{
-        grid-template-columns: 2fr repeat(2,1fr);
-        row-gap: 24px;
-    }
+  .footer-menus {
+    grid-template-columns: 2fr repeat(2, 1fr);
+    row-gap: 24px;
+  }
 
-    .contact-us{
-        grid-row: 1 / 3;
-    }
+  .contact-us {
+    grid-row: 1 / 3;
+  }
 
-    .footer-menu{
-        text-align: right;
-    }
+  .footer-menu {
+    text-align: right;
+  }
 
-    .activities{
-        grid-template-columns: 1fr;
-        row-gap: 36px;
-    }
-    .data-section{
-        grid-template-columns: 1fr;
-        background-size: 300%;
-    }
-    .team-members{
-        grid-template-columns: minmax(200px,400px);
-    }
-    .features,.services{
-        grid-template-columns: 1fr;
-    }
-    .showcases .case-item{
-        width: calc(100vw/2);
-        height: 30vw;
-    }
+  .activities {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+  .data-section {
+    grid-template-columns: 1fr;
+    background-size: 300%;
+  }
+  .team-members {
+    grid-template-columns: minmax(200px, 400px);
+  }
+  .features,
+  .services {
+    grid-template-columns: 1fr;
+  }
+  .showcases .case-item {
+    width: calc(100vw / 2);
+    height: 30vw;
+  }
 }
 
-@media(max-width:576px){
-    .slide-caption h1{
-        font-size: 28px;
-    }
-    .slide-caption h3{
-        font-size: 14px;
-    }
-    .explore-btn{
-        font-size: 14px;
-        padding: 8px 18px;
-    }
-    .showcases .case-item{
-        width: 100vw;
-        height: 60vw;
-    }
-    
+@media (max-width: 576px) {
+  .slide-caption h1 {
+    font-size: 28px;
+  }
+  .slide-caption h3 {
+    font-size: 14px;
+  }
+  .explore-btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+  .showcases .case-item {
+    width: 100vw;
+    height: 60vw;
+  }
 }

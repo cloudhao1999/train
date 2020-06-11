@@ -4,7 +4,7 @@ window,
   addEventListener("scroll", () => {
     let height = headerEl.getBoundingClientRect().height;
 
-    if (window.pageYOffset - height > 800) {
+    if (window.pageYOffset - height > 500) {
       if (!headerEl.classList.contains("sticky")) {
         headerEl.classList.add("sticky");
       }
@@ -117,7 +117,7 @@ document.addEventListener("scrollStart",()=>{
 const exploreBtnEls = document.querySelectorAll(".explore-btn");
 exploreBtnEls.forEach((exploreBtnEl) => {
   exploreBtnEl.addEventListener("click", () => {
-    scroll.animateScroll(document.querySelector("#about-us"));
+    scroll.animateScroll(document.querySelector("#team-intro"));
   });
 });
 
