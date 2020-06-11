@@ -42,7 +42,14 @@
               <h2 class="act-title-det">{{article.title}}</h2>
               <div class="meta-det">
                 <p class="data-published-det">
-                  <i class="far fa-calendar"></i>2019年12月1日
+                  <i class="far fa-calendar"></i>
+                  {{
+                    new Date(article.date_created).getFullYear() +
+                      "-" +
+                      (new Date(article.date_created).getMonth() + 1) +
+                      "-" +
+                      new Date(article.date_created).getDate()
+                  }}
                 </p>
                 <p class="comments-det"><i class="far fa-comments"></i> 33条评论</p>
               </div>
@@ -121,6 +128,8 @@
             const id = localStorage.getItem('id')
             const res =await axios.get(`https://mjuruankai.com/api/web/article_by_id/?id=${id}`);
             this.article = res.data.list[0].fields
+            this.article.content = this.article.content.replace(/\/images/g,"https://mjuruankai.com/images/")
+            console.log(this.article.content)
             console.log(this.article)
           }
         }

@@ -50,7 +50,14 @@
               </div>
               <div class="meta">
                 <p class="data-published">
-                  <i class="far fa-calendar"></i>2019年12月1日
+                  <i class="far fa-calendar"></i>
+                  {{
+                    new Date(article.fields.date_created).getFullYear() +
+                      "-" +
+                      (new Date(article.fields.date_created).getMonth() + 1) +
+                      "-" +
+                      new Date(article.fields.date_created).getDate()
+                  }}
                 </p>
                 <p class="comments">
                   <i class="far fa-comments"></i> {{article.fields.like}}条评论
