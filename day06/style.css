@@ -5,6 +5,9 @@
   font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
   font-size: 14px;
 }
+body{
+  overflow: hidden;
+}
 
 img {
   width: 100%;
