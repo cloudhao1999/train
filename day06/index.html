@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./libs/scrollReveal/scrollreveal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css"
+    />
+    <link rel="stylesheet" href="./libs/glide/glide.core.min.css" />
+    <link rel="stylesheet" href="./libs/glide/glide.theme.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>猪猪科技</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="logo">猪猪科技</div>
+        <nav>
+          <a href="#home">首页</a>
+          <a href="#about-us">关于我们</a>
+          <a href="#showcases">成功案例</a>
+          <a href="#service">服务流程</a>
+          <a href="#team-intro">团队介绍</a>
+          <a href="#company-activities">公司动态</a>
+          <i class="fas fa-search"></i>
+        </nav>
+        <div class="burger">
+          <div class="burger-line1"></div>
+          <div class="burger-line2"></div>
+          <div class="burger-line3"></div>
+        </div>
+      </header>
+      <div id="home" class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <div class="glide__slides">
+            <div class="glide__slide">
+              <div class="slide-caption">
+                <h1>西部世界，每个人都有自己的归途</h1>
+                <h3>
+                  在西部世界，感受真实的自己，体验不同的结局，现已更新罗马世界。
+                </h3>
+                <button class="explore-btn">探索更多</button>
+              </div>
+              <div class="backdrop"></div>
+              <img src="./images/people-in-couch-1024248.jpg" alt="" />
+            </div>
+            <div class="glide__slide">
+              <div class="slide-caption left">
+                <h1>罗马世界，体验原始的刺激</h1>
+                <h3>
+                  在罗马世界，感受原始的气息，体验不同的结局，现已更新罗马世界。
+                </h3>
+                <button class="explore-btn">探索更多</button>
+              </div>
+              <div class="backdrop"></div>
+              <video src="./videos/working-man.mp4" muted autoplay loop></video>
+            </div>
+          </div>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+            <
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+            >
+          </button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <section id="about-us" class="about-us">
+          <h2 class="title1">关于我们</h2>
+          <p class="intro">
+            我们是一家服务于广大体验生活的爱好者，通过提供真实的世界闻名。
+          </p>
+          <div class="features">
+            <div class="feature">
+              <i class="fas fa-lightbulb"></i>
+              <h4 class="feature-title">品牌创意</h4>
+              <p class="feature-content">
+                为企业设计独特的并完美呈现企业价值观的视觉
+              </p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-chart-line"></i>
+              <h4 class="feature-title">聚合营销</h4>
+              <p class="feature-content">
+                为企业设计独特的并完美呈现企业价值观的视觉
+              </p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-desktop"></i>
+              <h4 class="feature-title">电子商务</h4>
+              <p class="feature-content">
+                为企业设计独特的并完美呈现企业价值观的视觉
+              </p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-desktop"></i>
+              <h4 class="feature-title">网页设计</h4>
+              <p class="feature-content">
+                为企业设计独特的并完美呈现企业价值观的视觉
+              </p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-tachometer-alt"></i>
+              <h4 class="feature-title">网站优化</h4>
+              <p class="feature-content">
+                为企业设计独特的并完美呈现企业价值观的视觉
+              </p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-lightbulb"></i>
+              <h4 class="feature-title">网站架设</h4>
+              <p class="feature-content">
+                为企业设计独特的并完美呈现企业价值观的视觉
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="showcases" class="showcases section-bg">
+          <h2 class="title1">成功案例</h2>
+          <div class="filter-btns">
+            <button class="filter-btn active" data-filter="*">全部</button>
+            <button class="filter-btn" data-filter=".web">WEB</button>
+            <button class="filter-btn" data-filter=".mobile">移动</button>
+            <button class="filter-btn" data-filter=".science">科研</button>
+          </div>
+          <div class="cases">
+            <div class="case-item web science">
+              <img
+                src="./images/gray-laptop-computer-showing-html-codes-in-shallow-focus-160107.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item web science">
+              <img
+                src="./images/photo-of-imac-near-macbook-1029757.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item web">
+              <img
+                src="./images/apple-laptop-notebook-office-39284.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item web">
+              <img
+                src="./images/apple-apple-device-design-desk-285814.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item mobile">
+              <img
+                src="./images/person-using-black-and-white-smartphone-and-holding-blue-230544.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item science">
+              <img
+                src="./images/person-holding-a-smartphone-892757.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item mobile">
+              <img
+                src="./images/blur-close-up-code-computer-546819.jpg"
+                alt=""
+              />
+            </div>
+            <div class="case-item science">
+              <img
+                src="./images/bokeh-photography-of-person-holding-turned-on-iphone-1440727.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+        <section id="service" class="service">
+          <h2 class="title1">服务流程</h2>
+          <p class="intro">
+            旅游公司，提供高级的差旅服务（飞机），五星级酒店
+          </p>
+          <div class="services">
+            <div class="service-item">
+              <i class="fas fa-comments"></i>
+              <h2 class="service-title">需求沟通</h2>
+              <p class="service-content">
+                客户提出网站建设的基本需求，包括设计要求极其功能
+              </p>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-comments"></i>
+              <h2 class="service-title">项目评估</h2>
+              <p class="service-content">
+                客户提出网站建设的基本需求，包括设计要求极其功能
+              </p>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-comments"></i>
+              <h2 class="service-title">签订合同</h2>
+              <p class="service-content">
+                客户提出网站建设的基本需求，包括设计要求极其功能
+              </p>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-comments"></i>
+              <h2 class="service-title">提案阶段</h2>
+              <p class="service-content">
+                客户提出网站建设的基本需求，包括设计要求极其功能
+              </p>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-comments"></i>
+              <h2 class="service-title">制作阶段</h2>
+              <p class="service-content">
+                客户提出网站建设的基本需求，包括设计要求极其功能
+              </p>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-comments"></i>
+              <h2 class="service-title">网站验收</h2>
+              <p class="service-content">
+                客户提出网站建设的基本需求，包括设计要求极其功能
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="team-intro" class="team-intro section-bg">
+          <h2 class="title1">团队介绍</h2>
+          <div class="team-members">
+            <div class="team-member">
+              <div class="profile-image">
+                <img src="./images/man-wearing-black-suit-2955376.jpg" alt="" />
+              </div>
+              <h4 class="name">冯玉祥</h4>
+              <p class="position">前端工程师</p>
+              <ul class="social-links">
+                <li>
+                  <a href=""><i class="fab fa-weixin"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-weibo"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="team-member">
+              <div class="profile-image">
+                <img
+                  src="./images/smiling-woman-wearing-black-sweater-1587009.jpg"
+                  alt=""
+                />
+              </div>
+              <h4 class="name">谢可盈</h4>
+              <p class="position">web工程师</p>
+              <ul class="social-links">
+                <li>
+                  <a href=""><i class="fab fa-weixin"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-weibo"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="team-member">
+              <div class="profile-image">
+                <img
+                  src="./images/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903.jpg"
+                  alt=""
+                />
+              </div>
+              <h4 class="name">冯玉祥</h4>
+              <p class="position">后端工程师</p>
+              <ul class="social-links">
+                <li>
+                  <a href=""><i class="fab fa-weixin"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-weibo"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="team-member">
+              <div class="profile-image">
+                <img src="./images/business-woman-2697954_1920.jpg" alt="" />
+              </div>
+              <h4 class="name">芸筱狐</h4>
+              <p class="position">市场专员</p>
+              <ul class="social-links">
+                <li>
+                  <a href=""><i class="fab fa-weixin"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-weibo"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="data-section">
+          <div class="data-piece">
+            <i class="fas fa-code"></i>
+            <div class="num">156</div>
+            <div class="data-desc">行代码</div>
+          </div>
+          <div class="data-piece">
+            <i class="fas fa-award"></i>
+            <div class="num">288</div>
+            <div class="data-desc">个奖项</div>
+          </div>
+          <div class="data-piece">
+            <i class="fas fa-laugh-wink"></i>
+            <div class="num">1588</div>
+            <div class="data-desc">位客户</div>
+          </div>
+          <div class="data-piece">
+            <i class="fas fa-folder"></i>
+            <div class="num">220</div>
+            <div class="data-desc">个项目</div>
+          </div>
+        </section>
+        <section id="company-activities" class="company-activities">
+          <h2 class="title1">公司动态</h2>
+          <p class="intro">关注公司动态，第一时间获取一手消息</p>
+          <div class="activities">
+            <div class="activity">
+              <div class="act-image-wrapper">
+                <img src="./images/activity01-image.jpg" alt="" />
+              </div>
+              <div class="meta">
+                <p class="data-published">
+                  <i class="far fa-calendar"></i>2019年12月1日
+                </p>
+                <p class="comments"><i class="far fa-comments"></i> 33条评论</p>
+              </div>
+              <h2 class="act-title">提供互联网接入的ISP公司</h2>
+              <article>
+                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
+              </article>
+              <button class="readmore-btn">阅读更多</button>
+            </div>
+            <div class="activity">
+              <div class="act-image-wrapper">
+                <img src="./images/watercrafts-on-river-3464632.jpg" alt="" />
+              </div>
+              <div class="meta">
+                <p class="data-published">
+                  <i class="far fa-calendar"></i>2019年12月1日
+                </p>
+                <p class="comments"><i class="far fa-comments"></i> 33条评论</p>
+              </div>
+              <h2 class="act-title">提供互联网接入的ISP公司</h2>
+              <article>
+                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
+              </article>
+              <button class="readmore-btn">阅读更多</button>
+            </div>
+            <div class="activity">
+              <div class="act-image-wrapper">
+                <img src="./images/red-suspension-bridge-3493772.jpg" alt="" />
+              </div>
+              <div class="meta">
+                <p class="data-published">
+                  <i class="far fa-calendar"></i>2019年12月1日
+                </p>
+                <p class="comments"><i class="far fa-comments"></i> 33条评论</p>
+              </div>
+              <h2 class="act-title">提供互联网接入的ISP公司</h2>
+              <article>
+                提供互联网接入的ISP公司现在已经成功的在纳斯达克敲钟了，这对我们的未来很有帮助。
+              </article>
+              <button class="readmore-btn">阅读更多</button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <div class="footer-menus">
+          <div class="contact-us">
+            <p class="menu-title">联系我们</p>
+            <p>地址：中国福建省福州市闽侯县闽江学院</p>
+            <p>电话：18357662836</p>
+            <p>传真：18357662836</p>
+            <p>电子邮箱：929682749@qq.com</p>
+          </div>
+          <div class="service-menu footer-menu">
+            <p class="menu-title">服务概览</p>
+            <ul class="menu-items">
+              <li><a href="#">网站建设</a></li>
+              <li><a href="#">域名购买</a></li>
+              <li><a href="#">网页设计</a></li>
+              <li><a href="#">移动应用</a></li>
+            </ul>
+          </div>
+          <div class="service-menu footer-menu">
+            <p class="menu-title">成功案例</p>
+            <ul class="menu-items">
+              <li><a href="#">桌面网站</a></li>
+              <li><a href="#">移动网站</a></li>
+              <li><a href="#">科研项目</a></li>
+              <li><a href="#">软件应用</a></li>
+            </ul>
+          </div>
+          <div class="service-menu footer-menu">
+            <p class="menu-title">公司动态</p>
+            <ul class="menu-items">
+              <li><a href="#">信息公开</a></li>
+              <li><a href="#">最近新闻</a></li>
+              <li><a href="#">最新博客</a></li>
+            </ul>
+          </div>
+          <div class="service-menu footer-menu">
+            <p class="menu-title">帮助与支持</p>
+            <ul class="menu-items">
+              <li><a href="#">帮助中心</a></li>
+              <li><a href="#">联系客服</a></li>
+              <li><a href="#">文档资源</a></li>
+            </ul>
+          </div>
+          <p class="icp-info">闽ICP备 12345678901-1 号</p>
+          <p class="rights">
+            &copy; 2020 猪猪科技 - 响应式企业站 版权所有
+          </p>
+          <div class="scrollToTop">
+            <a href="#home"><i class="fas fa-chevron-up"></i></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./libs/isotope/isotope.pkgd.min.js"></script>
+    <script src="./libs/anime/anime.min.js"></script>
+    <script src="./libs/glide/glide.min.js"></script>
+    <script src="./libs/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
