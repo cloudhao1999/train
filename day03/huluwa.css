@@ -88,8 +88,12 @@ html {
 .coffee-content span {
   padding-left: 2em;
 }
-.coffee-content span b {
-  font-size: 300%;
+.coffee-content .details{
+  font-size: 18px;
+  font-weight: 100;
+}
+.coffee-content .details::first-letter {
+  font-size: 150%;
   font-weight: bold;
   color: red;
 }
