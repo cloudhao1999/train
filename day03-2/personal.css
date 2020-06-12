@@ -226,3 +226,33 @@ html {
     position: relative;
   }
 }
+
+@media screen and (max-width: 1420px) {
+  .content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .content-movie-det img {
+    width: 360px;
+    height: 520px;
+  }
+  .content-book-det img {
+    width: 360px;
+    height: 520px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .content-movie-det img {
+    width: 260px;
+    height: 420px;
+  }
+  .content-book-det img {
+    width: 260px;
+    height: 420px;
+  }
+}
