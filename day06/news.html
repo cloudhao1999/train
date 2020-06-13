@@ -149,7 +149,6 @@
               `https://mjuruankai.com/api/web/article_list/?page=${this.num}`
             );
             this.articleList = [...this.articleList,...res.data.list];
-            console.log(this.articleList);
           },
           replace(str) {
             let con = str.replace(/\s*/g, ""); //去掉空格

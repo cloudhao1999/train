@@ -130,8 +130,6 @@
             const res =await axios.get(`https://mjuruankai.com/api/web/article_by_id/?id=${id}`);
             this.article = res.data.list[0].fields
             this.article.content = this.article.content.replace(/\/images/g,"https://mjuruankai.com/images/")
-            console.log(this.article.content)
-            console.log(this.article)
           },
           getQueryVariable(variable) {
             var query = window.location.search.substring(1);
