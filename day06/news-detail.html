@@ -92,7 +92,7 @@
             <ul class="menu-items">
               <li><a href="#">信息公开</a></li>
               <li><a href="#">最近新闻</a></li>
-              <li><a href="https://cloudhao.top" target="_blank">最新博客</a></li>
+              <li><a href="https://blog.cloudhao.top" target="_blank">最新博客</a></li>
             </ul>
           </div>
           <div class="service-menu footer-menu">
@@ -126,12 +126,23 @@
         },
         methods:{
           async getArticle(){
-            const id = localStorage.getItem('id')
+            const id = this.getQueryVariable('id')
             const res =await axios.get(`https://mjuruankai.com/api/web/article_by_id/?id=${id}`);
             this.article = res.data.list[0].fields
             this.article.content = this.article.content.replace(/\/images/g,"https://mjuruankai.com/images/")
             console.log(this.article.content)
             console.log(this.article)
+          },
+          getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+              var pair = vars[i].split("=");
+              if (pair[0] == variable) {
+                return pair[1];
+              }
+            }
+            return false;
           }
         }
       })

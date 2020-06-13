@@ -73,6 +73,9 @@
               </button>
             </div>
           </div>
+          <button class="readmore-btn" @click="more()">
+            阅读更多
+          </button>
         </section>
       </div>
       <footer>
@@ -107,7 +110,7 @@
             <ul class="menu-items">
               <li><a href="#">信息公开</a></li>
               <li><a href="#">最近新闻</a></li>
-              <li><a href="https://cloudhao.top" target="_blank">最新博客</a></li>
+              <li><a href="https://blog.cloudhao.top" target="_blank">最新博客</a></li>
             </ul>
           </div>
           <div class="service-menu footer-menu">
@@ -133,7 +136,8 @@
         el: "#app",
         data() {
           return {
-            articleList: "",
+            articleList: [],
+            num:1,
           };
         },
         created() {
@@ -142,9 +146,9 @@
         methods: {
           async getArticleList() {
             const res = await axios.get(
-              `https://mjuruankai.com/api/web/article_list/?page=1`
+              `https://mjuruankai.com/api/web/article_list/?page=${this.num}`
             );
-            this.articleList = res.data.list;
+            this.articleList = [...this.articleList,...res.data.list];
             console.log(this.articleList);
           },
           replace(str) {
@@ -155,8 +159,11 @@
             return res2;
           },
           read(id){
-            localStorage.setItem('id',id);
-            window.location.href="./news-detail.html"
+            window.location.href=`./news-detail.html?id=${id}`
+          },
+          more(){
+            this.num++;
+            this.getArticleList()
           }
         },
       });
