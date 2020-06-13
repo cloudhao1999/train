@@ -16,5 +16,6 @@ day05使用vue制作的弹幕墙：https://cloudhao1999.github.io/train/day05/in
 day06使用vue制作企业站点：
 Github版（偏慢）
 https://cloudhao1999.github.io/train/day06/index.html 
+
 码云Pages版（快一点）
 http://cyh199910.gitee.io/zhuzhu/
