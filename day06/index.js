@@ -117,7 +117,7 @@ document.addEventListener("scrollStart",()=>{
 const exploreBtnEls = document.querySelectorAll(".explore-btn");
 exploreBtnEls.forEach((exploreBtnEl) => {
   exploreBtnEl.addEventListener("click", () => {
-    scroll.animateScroll(document.querySelector("#team-intro"));
+    scroll.animateScroll(document.querySelector("#service"));
   });
 });
 
