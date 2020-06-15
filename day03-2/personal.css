@@ -16,8 +16,10 @@ html {
   height: 60px;
 }
 .header-box {
-  padding: 15px 100px;
+  padding: 15px 0px;
   vertical-align: middle;
+  width:1200px;
+  margin: 0 auto;
 }
 
 .header .header-box .header-box-left {
@@ -96,7 +98,7 @@ html {
 
 /*中间内容*/
 .content {
-  width: 80%;
+  width: 1200px;
   margin: 0 auto;
 }
 .content p {
@@ -115,11 +117,12 @@ html {
 }
 
 .content-movie {
-  width: 100%;
+  width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 30px;
+  margin: 0 auto;
 }
 .content-movie-det {
   background-color: #fef0ef;
@@ -136,12 +139,13 @@ html {
 }
 
 .content-book {
-  width: 100%;
+  width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding-bottom: 20px;
   padding-top: 30px;
+  margin: 0 auto;
 }
 
 .content-book-det {
@@ -194,21 +198,121 @@ html {
 }
 
 /*自适应媒体调整*/
-@media screen and (max-width: 700px) {
+
+
+@media screen and (max-width: 1420px) {
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .content-movie-det img {
+    width: 260px;
+    height: 420px;
+  }
+  .content-book-det img {
+    width: 260px;
+    height: 420px;
+  }
+  .button .button-text {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .header-box{
+    width: 1000px;
+  }
+  .content {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .content-movie{
+    width: 100%;
+  }
+  .content-movie-det img {
+    width: 200px;
+    height: 320px;
+  }
+  .content-book{
+    width: 100%;
+  }
+  .content-book-det img {
+    width: 200px;
+    height: 320px;
+  }
+  .button .button-text {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header-box{
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .content-movie-det img {
+    width: 200px;
+    height: 320px;
+  }
+  .content-book-det img {
+    width: 200px;
+    height: 320px;
+  }
+  .button .button-text {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  .header-box{
+    width: 700px;
+  }
+  .content {
+    width: 700px;
+    margin: 0 auto;
+  }
+  
+  .content-movie-det img {
+    width: 300px;
+    height: 420px;
+  }
+  .content-book-det img {
+    width: 300px;
+    height: 420px;
+  }
+  
+}
+@media screen and (max-width: 738px) {
   .header-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 15px 0;
     width: 100%;
+    margin: 0 auto;
   }
   .header .header-box .header-box-right {
     display: none;
   }
   .header .header-box .header-box-left {
-    width: 60%;
     text-align: center;
-    padding-left: 65px;
   }
   .button .button-text .button-text-left {
     text-align: left;
@@ -225,34 +329,14 @@ html {
     visibility: visible;
     position: relative;
   }
-}
-
-@media screen and (max-width: 1420px) {
   .content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
-  .content-movie-det img {
-    width: 360px;
-    height: 520px;
+  .content-movie{
+    width: 100%;
   }
-  .content-book-det img {
-    width: 360px;
-    height: 520px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .content {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .content-movie-det img {
-    width: 260px;
-    height: 420px;
-  }
-  .content-book-det img {
-    width: 260px;
-    height: 420px;
+  .content-book{
+    width: 100%;
   }
 }
