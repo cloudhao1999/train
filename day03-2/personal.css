@@ -313,6 +313,7 @@ html {
   }
   .header .header-box .header-box-left {
     text-align: center;
+    padding-left: 12px;
   }
   .button .button-text .button-text-left {
     text-align: left;
