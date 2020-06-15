@@ -65,7 +65,7 @@ html {
 
 .header .header-box .dropdown {
   position: relative;
-  display: inline-block;
+  display: none;
   margin-right: 15px;
 }
 
@@ -307,6 +307,11 @@ html {
     padding: 15px 0;
     width: 100%;
     margin: 0 auto;
+  }
+  .header .header-box .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
   }
   .header .header-box .header-box-right {
     display: none;
