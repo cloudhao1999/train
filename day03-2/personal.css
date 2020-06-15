@@ -120,14 +120,13 @@ html {
   width: 1200px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 30px;
   margin: 0 auto;
 }
 .content-movie-det {
   background-color: #fef0ef;
   display: flex;
-  margin: 10px 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -142,7 +141,7 @@ html {
   width: 1200px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-bottom: 20px;
   padding-top: 30px;
   margin: 0 auto;
@@ -151,7 +150,6 @@ html {
 .content-book-det {
   background-color: #fef0ef;
   display: flex;
-  margin: 10px 10px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -181,7 +179,6 @@ html {
   color: white;
   font-size: 18px;
   font-weight: bold;
-  margin-left: 20px;
   padding-top: 70px;
 }
 .button .button-text .button-text-left .button-text-left-text {
@@ -193,7 +190,6 @@ html {
   width: 600px;
 }
 .button .button-text .button-text-right {
-  width: 20%;
   margin-top: 30px;
 }
 
@@ -305,11 +301,6 @@ html {
     flex-direction: row;
     margin: 0 auto;
   }
-
-  .button .button-text-right{
-    padding-right: 50px;
-    
-  }
   
 }
 @media screen and (max-width: 738px) {
@@ -332,6 +323,12 @@ html {
   .header .header-box .header-box-left {
     text-align: center;
     padding-left: 12px;
+  }
+  .content-movie-det{
+    margin: 0 auto;
+  }
+  .content-book-det{
+    margin: 0 auto;
   }
   .button .button-text .button-text-left {
     text-align: left;
