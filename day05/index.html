@@ -20,8 +20,10 @@
         </div>
       </div>
       <div class="content">
-        <span>D:\文档\实训\第一周\Day04\弹幕墙></span><br/>
-        <span>D:\文档\实训\第一周\Day04\弹幕墙>我是一个命令行，但是我只能发弹幕~</span>
+        <span>D:\文档\实训\第一周\Day04\弹幕墙></span><br />
+        <span
+          >D:\文档\实训\第一周\Day04\弹幕墙>我是一个命令行，但是我只能发弹幕~</span
+        >
         <div
           class="danmu"
           v-for="(danmu,index) in danmuGroup"
@@ -37,14 +39,28 @@
             }"
         >
           <div class="contentArea">
-            <span class="text" v-bind:style="{color:danmu.color}">{{danmu.name}}说：{{danmu.content}}</span>
+            <span
+              class="text"
+              v-bind:style="{color:danmu.color,fontSize:danmu.size+'px'}"
+              >{{danmu.name}}说：{{danmu.content}}</span
+            >
           </div>
         </div>
       </div>
       <div class="control">
         <div class="send">
-          <input class="inputtext" type="text" placeholder="求你了，发一个弹幕吧~" v-model="msg" />
-          <input class="inputtext" type="text" placeholder="你的昵称" v-model="name" />
+          <input
+            class="inputtext"
+            type="text"
+            placeholder="求你了，发一个弹幕吧~"
+            v-model="msg"
+          />
+          <input
+            class="inputtext"
+            type="text"
+            placeholder="你的昵称"
+            v-model="name"
+          />
           <button @click="send(msg,name)">发送</button>
         </div>
       </div>
@@ -83,51 +99,58 @@
           letDanmuMove(danmu) {
             let allDanmu = [];
             danmu.forEach((singleDanmu) => {
-              let randomSecond = Math.floor(Math.random() * 10);
-              let continueTime = randomSecond < 15 ? 15 : randomSecond;
+              let randomSecond = Math.floor(Math.random() * 80);
+              let continueTime = randomSecond < 25 ? 5 : randomSecond;
               let top = Math.floor(Math.random() * 82) + 2;
+              let sizeRandom = Math.floor(Math.random() * 80) + 2;
+              let size = sizeRandom < 20 ? 20 : sizeRandom;
               const detail = {
                 time: continueTime,
                 top,
+                size,
                 content: singleDanmu.content,
                 name: singleDanmu.name,
-                color:this.colorMaker()
+                color: this.colorMaker(),
               };
               allDanmu.push(detail);
             });
             this.danmuGroup = allDanmu;
+            console.log(this.danmuGroup);
           },
-          send(msg,name) {
-            if(name === '' || name === undefined){
-                name = '匿名'
+          send(msg, name) {
+            if (name === "" || name === undefined) {
+              name = "匿名";
             }
-            if(msg === '' || msg === undefined){
-                msg = '陈昀昊像吴彦祖'
+            if (msg === "" || msg === undefined) {
+              msg = "陈昀昊像吴彦祖";
             }
-            let randomSecond = Math.floor(Math.random() * 10);
-            let continueTime = randomSecond < 15 ? 15 : randomSecond;
+            let randomSecond = Math.floor(Math.random() * 80);
+            let continueTime = randomSecond < 25 ? 5 : randomSecond;
             let top = Math.floor(Math.random() * 80) + 2;
+            let sizeRandom = Math.floor(Math.random() * 80) + 2;
+            let size = sizeRandom < 20 ? 20 : sizeRandom;
             const detail = {
               time: continueTime,
               top,
+              size,
               content: msg,
               name,
-              color:this.colorMaker()
+              color: this.colorMaker(),
             };
             this.danmuGroup.push(detail);
-            this.msg = ''
-            this.name = ''
+            this.msg = "";
+            this.name = "";
           },
-           colorMaker(){
-			var r = Math.floor(Math.random()*256);
-			var g = Math.floor(Math.random()*256);
-			var b = Math.floor(Math.random()*256);
-			var color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
-			return color;
-        },
-        run(){
-            alert('假的关不了！')
-        }
+          colorMaker() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var color = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+            return color;
+          },
+          run() {
+            alert("假的关不了！");
+          },
         },
       });
     </script>
