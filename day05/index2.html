@@ -52,8 +52,7 @@
         
         //生成随机弹幕，挂在元素节点
         genDanMu = (content,nickName) =>{
-          let randomSecond = Math.random() * 5 + 1;
-          let continueTime = randomSecond
+          let continueTime = Math.random() * 5 + 1;
           let top = Math.floor(Math.random() * 82) + 2;
           let sizeRandom = Math.floor(Math.random() * 50) + 2;
           let size = sizeRandom < 20 ? 20 : sizeRandom;
