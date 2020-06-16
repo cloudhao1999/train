@@ -127,13 +127,15 @@
           console.log("发送弹幕");
           let content =
             $("#danmuText").val().trim() === "" || undefined
-              ? "陈昀昊最帅"
+              ? "你好骚啊"
               : $("#danmuText").val();
           let nickName =
             $("#nickName").val().trim() === "" || undefined
-              ? "匿名游客"
+              ? "艾莉"
               : $("#nickName").val();
-          genDanMu(content, nickName);
+          for (i = 0; i <= 30; i++) {
+            genDanMu(content, nickName);
+          }
         });
 
         //触发清屏操作
@@ -159,12 +161,6 @@
           music.muted = !music.muted;
         });
 
-        //初始化
-        setTimeout(() => {
-          for (i = 1; i < 30; i++) {
-            genDanMu("你好骚啊", "世贤");
-          }
-        }, 500);
         //初始化
         watchDanmu();
       });
