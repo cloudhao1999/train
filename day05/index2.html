@@ -13,7 +13,7 @@
     <div id="app">
       <div class="title">
         <span>C:\\Windows\System32\cmd.exe</span>
-        <div class="close" @click="run">
+        <div class="close">
           <span class="close-item1">-</span>
           <span class="close-item2">口</span>
           <span class="close-item3">X</span>
@@ -79,7 +79,6 @@
           $('#'+danmu.id + ' .contentArea').append(danmuText)
 
           danmuList.push({"id":danmu.id,"time":continueTime})
-          console.log(danmuList)
         }
 
         //随机颜色生成
@@ -118,11 +117,9 @@
 
         //点击发送按钮生成弹幕
         $('#send').click (()=>{
-          console.log("点击事件")
+          console.log("发送弹幕")
           let content = $('#danmuText').val().trim() === '' || undefined ?  '陈昀昊最帅' : $('#danmuText').val()
           let nickName = $('#nickName').val().trim() === '' || undefined ?  '匿名游客' : $('#nickName').val()
-          console.log(content)
-          console.log(nickName)
           genDanMu(content,nickName)
         })
 
@@ -130,6 +127,11 @@
         $('#clear').click (()=>{
           console.log("清屏")
           $(".danmu").empty()
+        })
+
+        //触发清屏操作
+        $('.close').click (()=>{
+          console.log("是假的")
         })
           
         //初始化
