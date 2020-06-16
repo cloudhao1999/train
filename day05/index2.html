@@ -160,7 +160,11 @@
           }
           music.muted = !music.muted;
         });
-
+        let isAppleBrowser = (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))
+        if(isAppleBrowser){
+          let music = document.getElementById("music");
+          music.play()
+        }
         //初始化
         watchDanmu();
       });
