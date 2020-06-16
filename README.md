@@ -11,7 +11,7 @@ day03使用div修改上一个项目：https://cloudhao1999.github.io/train/day03
 
 day04使用flex打造个人展示页：https://cloudhao1999.github.io/train/day03-2/index.html
 
-day05使用vue制作的弹幕墙：https://cloudhao1999.github.io/train/day05/index.html
+day05使用jQuery制作的弹幕墙：https://cloudhao1999.github.io/train/day05/index2.html
 
 day06使用vue制作企业站点：
 Github版（偏慢）
