@@ -155,14 +155,16 @@
           let music = document.getElementById("music");
           if ($("#pause").text() === "暂停播放") {
             $("#pause").text("继续播放");
+            music.pause()
           } else {
             $("#pause").text("暂停播放");
+            music.play()
           }
-          music.muted = !music.muted;
+          
         });
         let isAppleBrowser = (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))
         if(isAppleBrowser){
-          document.getElementById("pause").style.display = "none"
+          $("#pause").text() === "开始播放"
         }
         //初始化
         watchDanmu();
