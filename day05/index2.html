@@ -55,7 +55,7 @@
           let randomSecond = Math.floor(Math.random() * 20);
           let continueTime = randomSecond < 4 ? 4 : randomSecond
           let top = Math.floor(Math.random() * 82) + 2;
-          let sizeRandom = Math.floor(Math.random() * 80) + 2;
+          let sizeRandom = Math.floor(Math.random() * 50) + 2;
           let size = sizeRandom < 20 ? 20 : sizeRandom;
 
           let danmu =  document.createElement("div")
@@ -104,7 +104,7 @@
         watchDanmu = () =>{
           setInterval(()=>{
             danmuList.forEach((danmu,index)=>{
-            if(document.getElementById(danmu.id).offsetLeft < -200){
+            if(document.getElementById(danmu.id).offsetLeft < -500){
               deleteDanmu(danmu.id)
               danmuList.splice(index,1)
             }

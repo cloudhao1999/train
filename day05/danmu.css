@@ -4,6 +4,7 @@ body {
   padding: 0;
   height: 100%;
   position: relative;
+  min-width: 360px;
 }
 .title {
   height: 30px;
@@ -87,6 +88,6 @@ body {
     left: 100%;
   }
   to {
-    left: -100%;
+    left: -300%;
   }
 }
