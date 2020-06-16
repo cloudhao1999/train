@@ -47,7 +47,7 @@
             class="inputtext"
             type="text"
             placeholder="你的昵称"
-          /><br/>
+          /><br />
           <button id="send">发送</button>
           <button id="clear">清屏</button>
           <button id="pause">暂停播放</button>
@@ -147,16 +147,16 @@
           console.log("是假的");
         });
 
+        //控制音频
         $("#pause").click(() => {
-          console.log('音频')
-          let music = document.getElementById('music')
-          if($('.pause').text === '暂停播放'){
-            $('.pause').val('继续播放')
-          }else{
-            $('.pause').val('暂停播放')
+          console.log("音频");
+          let music = document.getElementById("music");
+          if ($("#pause").text() === "暂停播放") {
+            $("#pause").text("继续播放");
+          } else {
+            $("#pause").text("暂停播放");
           }
-          music.muted = !music.muted
-
+          music.muted = !music.muted;
         });
 
         //初始化
