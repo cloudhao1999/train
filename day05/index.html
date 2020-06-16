@@ -127,10 +127,10 @@
             console.log(this.danmuGroup);
           },
           send(msg, name) {
-            if (name === "" || name === undefined) {
+            if (name.trim() === "" || name === undefined) {
               name = "匿名";
             }
-            if (msg === "" || msg === undefined) {
+            if (msg.trim() === "" || msg === undefined) {
               msg = "陈昀昊像吴彦祖";
             }
             let randomSecond = Math.floor(Math.random() * 80);
