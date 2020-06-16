@@ -52,7 +52,7 @@
         
         //生成随机弹幕，挂在元素节点
         genDanMu = (content,nickName) =>{
-          let randomSecond = Math.floor(Math.random() * 5) + 1;
+          let randomSecond = Math.random() * 5 + 1;
           let continueTime = randomSecond
           let top = Math.floor(Math.random() * 82) + 2;
           let sizeRandom = Math.floor(Math.random() * 50) + 2;
@@ -98,8 +98,8 @@
 
         //移动弹幕
         letItGo = ({id,time}) =>{
-          let currentX = parseInt(document.getElementById(id).style.left)
-          document.getElementById(id).style.left = currentX - parseInt(time) + 'px'
+          let currentX = parseFloat(document.getElementById(id).style.left)
+          document.getElementById(id).style.left = currentX - time + 'px'
         }
 
         //观察弹幕状态
