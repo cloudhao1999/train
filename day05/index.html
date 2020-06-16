@@ -33,7 +33,7 @@
                 animationName:'danmuAnimation',
                 animationDuration:danmu.time + 's',
                 animationTimingFunction:'linear',
-                animationDelay:danmu.num*0.5+'s',
+                animationDelay:'0.5s',
                 animationIterationCount:'infinite',
                 animationPlayState:'running',
                 top:danmu.top +'%',
@@ -106,8 +106,8 @@
           letDanmuMove(danmu) {
             let allDanmu = [];
             danmu.forEach((singleDanmu) => {
-              let randomSecond = Math.floor(Math.random() * 80);
-              let continueTime = randomSecond > 25 ? 5 : randomSecond;
+              let randomSecond = Math.floor(Math.random() * 20);
+              let continueTime = randomSecond < 4 ? 4 : randomSecond
               let top = Math.floor(Math.random() * 82) + 2;
               let sizeRandom = Math.floor(Math.random() * 80) + 2;
               let size = sizeRandom < 20 ? 20 : sizeRandom;
