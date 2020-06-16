@@ -6,6 +6,12 @@ body {
   position: relative;
   min-width: 360px;
 }
+audio{
+  position: fixed;
+  z-index: 0;
+  top: 100px;
+  left: 100px;
+}
 .title {
   height: 30px;
   border-top: 1px solid black;
@@ -82,7 +88,7 @@ img{
   border: none;
   height: 29px;
   cursor: pointer;
-  width: 350px;
+  width: 200px;
 }
 
 .inputtext{
@@ -97,11 +103,10 @@ img{
     margin-bottom: 8px;
 }
 
-@keyframes danmuAnimation {
-  from {
-    left: 100%;
-  }
-  to {
-    left: -300%;
+
+@media screen and (max-width: 666px) {
+  .control button {
+    margin-bottom: 10px;
+    width: 350px;
   }
 }
