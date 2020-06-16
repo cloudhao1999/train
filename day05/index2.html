@@ -41,6 +41,7 @@
             placeholder="你的昵称"
           />
           <button id="send">发送</button>
+          <button id="clear">清屏</button>
         </div>
       </div>
     </div>
@@ -123,6 +124,12 @@
           console.log(content)
           console.log(nickName)
           genDanMu(content,nickName)
+        })
+
+        //触发清屏操作
+        $('#clear').click (()=>{
+          console.log("清屏")
+          $(".danmu").empty()
         })
           
         //初始化
