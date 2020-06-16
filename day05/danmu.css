@@ -1,0 +1,92 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+}
+.title {
+  height: 30px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+.title .close {
+  float: right;
+  margin-right: 10px;
+}
+.title .close .close-item1,.close-item2,.close-item3{
+  margin-right: 10px;
+}
+.title .close .close-item1:hover {
+  color: blue;
+}
+.title .close .close-item2:hover  {
+  color: green;
+}
+.title .close .close-item3:hover  {
+  color: red;
+}
+.content {
+  height: 600px;
+  background-color: black;
+  color: white;
+  position: relative;
+  padding-bottom: 23px;
+  overflow: hidden;
+}
+.content .danmu {
+  position: absolute;
+  left: 100%;
+  z-index: 10;
+  animation-timing-function: linear;
+  animation-fill-mode: none;
+  transform: translateZ(0);
+  white-space: nowrap;
+  animation: danmuAnimation 5s linear;
+}
+.content .danmu .contentArea {
+  position: relative;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.content .danmu .contentArea .text {
+  color: white;
+}
+.control {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.control button {
+  margin-top: 5px;
+  background-color: #4caf50;
+  color: white;
+  padding:0 8px;
+  font-size: 16px;
+  border: none;
+  height: 29px;
+  cursor: pointer;
+  width: 350px;
+}
+
+.inputtext{
+    border-radius: 3px;
+    height: 25px;
+    font-size: 15px;
+    border: 1px solid #cccccc;
+    outline: none;
+    color: #808080;
+    padding-left: 5px;
+    width: 350px;
+    margin-bottom: 8px;
+}
+
+@keyframes danmuAnimation {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -100%;
+  }
+}

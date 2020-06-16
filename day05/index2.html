@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我是一个CMD！！！！</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./show.js"></script>
+    <link rel="stylesheet" href="./danmu.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="title">
+        <span>C:\\Windows\System32\cmd.exe</span>
+        <div class="close" @click="run">
+          <span class="close-item1">-</span>
+          <span class="close-item2">口</span>
+          <span class="close-item3">X</span>
+        </div>
+      </div>
+      <div class="content">
+        <span>D:\文档\实训\第一周\Day04\弹幕墙></span><br />
+        <span
+          >D:\文档\实训\第一周\Day04\弹幕墙>我是一个命令行，但是我只能发弹幕~</span
+        >
+        </div>
+      </div>
+      <div class="control">
+        <div class="send">
+          <input
+          id="danmuText"
+            class="inputtext"
+            type="text"
+            placeholder="求你了，发一个弹幕吧~"
+          />
+          <input
+          id="nickName"
+            class="inputtext"
+            type="text"
+            placeholder="你的昵称"
+          />
+          <button id="send">发送</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(()=>{
+        let num = 0; //id生成器
+        let danmuList = [] //定义一个数组记录弹幕id
+
+        
+        //生成随机弹幕，挂在元素节点
+        genDanMu = (content,nickName) =>{
+          let randomSecond = Math.floor(Math.random() * 80);
+          let continueTime = randomSecond > 25 ? 5 : randomSecond;
+          let top = Math.floor(Math.random() * 82) + 2;
+          let sizeRandom = Math.floor(Math.random() * 80) + 2;
+          let size = sizeRandom < 20 ? 20 : sizeRandom;
+
+          let danmu =  document.createElement("div")
+          danmu.style.animationName ='danmuAnimation'
+          danmu.style.animationDuration = continueTime + 's'
+          danmu.style.animationTimingFunction = 'linear'
+          danmu.style.animationDelay = '0.5s'
+          danmu.style.animationFillMode = 'forwards'
+          danmu.style.animationPlayState = 'running'
+          danmu.style.top = top + '%'
+          num++
+          danmu.id = "num_" + num
+          danmu.className = 'danmu'
+
+
+          $(".content").append(danmu)
+          let danmuContent = document.createElement("div")
+          danmuContent.className = 'contentArea'
+          $('#'+danmu.id).append(danmuContent)
+
+          let danmuText = document.createElement("span")
+          danmuText.className = 'text'
+          danmuText.style.color = colorMaker()
+          danmuText.style.fontSize = size + 'px'
+          danmuText.textContent = nickName+'说：'+content
+          $('#'+danmu.id + ' .contentArea').append(danmuText)
+
+          danmuList.push({"id":danmu.id})
+        }
+
+        //随机颜色生成
+        colorMaker = () =>{
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var color = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+            return color;
+          }
+
+        //删除弹幕节点
+        deleteDanmu = (id)=>{
+          $('#'+id).remove()
+        }
+
+        //观察弹幕状态
+        watchDanmu = () =>{
+          setInterval(()=>{
+            danmuList.forEach((danmu,index)=>{
+            if(document.getElementById(danmu.id).offsetLeft < -200){
+              deleteDanmu(danmu.id)
+              danmuList.splice(index,1)
+            }
+          })
+          },100)
+        }
+
+        //点击发送按钮生成弹幕
+        $('#send').click (()=>{
+          console.log("点击事件")
+          let content = $('#danmuText').val() === '' || undefined ?  '陈昀昊最帅' : $('#danmuText').val()
+          let nickName = $('#nickName').val() === '' || undefined ?  '匿名游客' : $('#nickName').val()
+          console.log(content)
+          console.log(nickName)
+          genDanMu(content,nickName)
+        })
+          
+        //初始化
+        for(i=1;i<30;i++){
+          genDanMu("你好","昀昊")
+        }
+        //初始化
+        watchDanmu()
+      })
+    </script>
+  </body>
+</html>
