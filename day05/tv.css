@@ -42,7 +42,7 @@ body {
   animation-fill-mode: none;
   transform: translateZ(0);
   white-space: nowrap;
-  animation: danmuAnimation 5s linear 2s infinite alternate;
+  animation: danmuAnimation 5s linear;
 }
 .content .danmu .contentArea {
   position: relative;

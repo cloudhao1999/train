@@ -28,14 +28,16 @@
           class="danmu"
           v-for="(danmu,index) in danmuGroup"
           :key="index"
+          :id="'num_'+danmu.num"
           v-bind:style="{
                 animationName:'danmuAnimation',
                 animationDuration:danmu.time + 's',
                 animationTimingFunction:'linear',
-                animationDelay:index*0.5+'s',
+                animationDelay:danmu.num*0.5+'s',
                 animationIterationCount:'infinite',
                 animationPlayState:'running',
                 top:danmu.top +'%',
+                animationFillMode : 'forwards'
             }"
         >
           <div class="contentArea">
@@ -90,10 +92,15 @@
             ],
             msg: "",
             name: "",
+            num: 0,
           };
         },
         created() {
           this.letDanmuMove(this.danmuGroup);
+          setTimeout(()=>{
+
+            this.watchDanmu();
+          },500)
         },
         methods: {
           letDanmuMove(danmu) {
@@ -111,7 +118,9 @@
                 content: singleDanmu.content,
                 name: singleDanmu.name,
                 color: this.colorMaker(),
+                num: this.num,
               };
+              this.num++;
               allDanmu.push(detail);
             });
             this.danmuGroup = allDanmu;
@@ -136,10 +145,25 @@
               content: msg,
               name,
               color: this.colorMaker(),
+              num: this.num,
             };
+            this.num++;
             this.danmuGroup.push(detail);
             this.msg = "";
             this.name = "";
+          },
+          watchDanmu() {
+            console.log(this.danmuGroup)
+            setInterval(() => {
+              let danmuList = this.danmuGroup
+              danmuList.forEach((danmu, index) => {
+                if (document.getElementById("num_" + danmu.num).offsetLeft < -200) {
+                  danmuList.splice(index, 1);
+                }
+              });
+              this.danmuGroup = danmuList
+            }, 10);
+
           },
           colorMaker() {
             var r = Math.floor(Math.random() * 256);
