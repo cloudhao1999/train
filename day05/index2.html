@@ -52,20 +52,15 @@
         
         //生成随机弹幕，挂在元素节点
         genDanMu = (content,nickName) =>{
-          let randomSecond = Math.floor(Math.random() * 20);
-          let continueTime = randomSecond < 4 ? 4 : randomSecond
+          let randomSecond = Math.floor(Math.random() * 5) + 1;
+          let continueTime = randomSecond
           let top = Math.floor(Math.random() * 82) + 2;
           let sizeRandom = Math.floor(Math.random() * 50) + 2;
           let size = sizeRandom < 20 ? 20 : sizeRandom;
 
           let danmu =  document.createElement("div")
-          danmu.style.animationName ='danmuAnimation'
-          danmu.style.animationDuration = continueTime + 's'
-          danmu.style.animationTimingFunction = 'linear'
-          danmu.style.animationDelay = '0.5s'
-          danmu.style.animationFillMode = 'forwards'
-          danmu.style.animationPlayState = 'running'
           danmu.style.top = top + '%'
+          danmu.style.left = window.innerWidth + 'px'
           num++
           danmu.id = "num_" + num
           danmu.className = 'danmu'
@@ -83,7 +78,8 @@
           danmuText.textContent = nickName+'说：'+content
           $('#'+danmu.id + ' .contentArea').append(danmuText)
 
-          danmuList.push({"id":danmu.id})
+          danmuList.push({"id":danmu.id,"time":continueTime})
+          console.log(danmuList)
         }
 
         //随机颜色生成
@@ -100,16 +96,24 @@
           $('#'+id).remove()
         }
 
+        //移动弹幕
+        letItGo = ({id,time}) =>{
+          let currentX = parseInt(document.getElementById(id).style.left)
+          document.getElementById(id).style.left = currentX - parseInt(time) + 'px'
+        }
+
         //观察弹幕状态
         watchDanmu = () =>{
           setInterval(()=>{
             danmuList.forEach((danmu,index)=>{
-            if(document.getElementById(danmu.id).offsetLeft < -500){
+              letItGo(danmu)
+              let danmuDiv = document.getElementById(danmu.id)
+            if(parseInt(danmuDiv.style.left) < -(danmuDiv.offsetWidth)) {
               deleteDanmu(danmu.id)
               danmuList.splice(index,1)
             }
           })
-          },100)
+          },10)
         }
 
         //点击发送按钮生成弹幕
@@ -124,7 +128,7 @@
           
         //初始化
         for(i=1;i<30;i++){
-          genDanMu("你好","昀昊")
+          genDanMu("你好骚啊","艾莉")
         }
         //初始化
         watchDanmu()
