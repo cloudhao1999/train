@@ -27,7 +27,7 @@
         <div
           class="danmu"
           v-for="(danmu,index) in danmuGroup"
-          :key="index"
+          :key="danmu.num"
           :id="'num_'+danmu.num"
           v-bind:style="{
                 animationName:'danmuAnimation',
