@@ -162,10 +162,8 @@
         });
 
         //苹果safari浏览器不支持audio自动播放，特别设置
-        let isAppleBrowser = (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))
-        if(isAppleBrowser){
+          music.pause()
           $("#pause").text("开始播放")
-        }
         //初始化
         watchDanmu();
       });
