@@ -1,0 +1,52 @@
+.github-item{
+    width: 220px;
+    height: 400px;
+    background-color: #EAEAEA;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.github-item img{
+    width: 80%;
+    margin: 0 auto;
+}
+.github-item .title{
+    font-size: 25px;
+    padding: 15px 0;
+}
+.github-item .name{
+    color: indianred;
+    font-weight: 500;
+}
+.github-item .item-det{
+    text-align: left;
+    margin: 0 auto;
+}
+.peoples{
+    color: orange;
+    margin-right: 9px;
+}
+.stars{
+    color: #FFD700;
+    margin-right: 9px;
+}
+.forks{
+    color: skyblue;
+    margin-right: 9px;
+}
+.issues{
+    color: #EDA1A7;
+    margin-right: 9px;
+}
+@media (max-width: 680px) {
+    .github-item{
+      width: 200px;
+    }
+}
+@media (max-width:450px) {
+    .github-item{
+      width: 350px;
+      height: 500px;
+    }
+  }
