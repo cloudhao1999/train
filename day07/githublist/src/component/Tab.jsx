@@ -43,11 +43,8 @@ class Tab extends React.Component {
   }
 
   switchTab = (e, { name, url }) => {
-    console.log(e.target);
-    console.log(name);
     let { target } = e;
     const filterOption = target.getAttribute("data-filter");
-    console.log(filterOption);
     if (filterOption) {
       document
         .querySelectorAll(".tab-list.active")
@@ -64,7 +61,6 @@ class Tab extends React.Component {
   };
 
   async FetchGit() {
-    console.log(this.state.url);
     this.setState({
       githubData: [],
     });
@@ -72,7 +68,6 @@ class Tab extends React.Component {
     this.setState({
       githubData: res.data.items,
     });
-    console.log(this.state.githubData);
   }
 
   componentDidMount() {
@@ -82,11 +77,18 @@ class Tab extends React.Component {
   render() {
     const { githubData } = this.state;
     const tabStyle = {
-      marginTop: "54px",
+      marginTop: "14px",
       marginBottom: "38px",
     };
+    const titleStyle = {
+        fontSize:"25px",
+        fontWeight:"500",
+        paddingTop:"20px",
+        display:"block"
+    }
     return (
       <div>
+        <span style={titleStyle}>Github热门项目</span>
         <div style={tabStyle}>
           <button
             className="tab-list active"

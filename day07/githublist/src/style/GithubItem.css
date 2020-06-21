@@ -23,23 +23,7 @@
     text-align: left;
     margin: 0 auto;
 }
-.peoples{
-    color: orange;
-    margin-right: 9px;
-}
-.stars{
-    color: #FFD700;
-    margin-right: 9px;
-}
-.forks{
-    color: skyblue;
-    margin-right: 9px;
-}
-.issues{
-    color: #EDA1A7;
-    margin-right: 9px;
-}
-@media (max-width: 680px) {
+@media (max-width: 740px) {
     .github-item{
       width: 200px;
     }

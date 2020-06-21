@@ -53,6 +53,11 @@ html{
 }
 @media (max-width: 680px) {
   .list-content{
+    width: 500px;
+  }
+}
+@media (max-width: 520px) {
+  .list-content{
     width: 100%;
   }
 }
