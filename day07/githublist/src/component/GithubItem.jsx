@@ -75,7 +75,7 @@ class GithubItem extends React.Component {
         <div style={itemDetStyle}>
           <div>
             <FontAwesomeIcon style={peopleStyle} icon={faPeopleArrows} />
-            <span>{name}</span>
+            <span style={{fontWeight:'500'}}>{name}</span>
           </div>
           <div>
             <FontAwesomeIcon style={starsStyle} icon={faStar} />
