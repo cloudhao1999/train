@@ -60,5 +60,10 @@ html{
   .list-content{
     width: 100%;
   }
+  .tab-list {
+    margin: 0 10px;
+    margin-top: 8px;
+    width: 120px;
+  }
 }
 

@@ -78,7 +78,7 @@ class Tab extends React.Component {
     const { githubData } = this.state;
     const tabStyle = {
       marginTop: "14px",
-      marginBottom: "38px",
+      marginBottom: "18px",
       width:"100vw"
     };
     const titleStyle = {
