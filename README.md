@@ -19,3 +19,5 @@ https://cloudhao1999.github.io/train/day06/index.html
 
 码云Pages版（快一点）
 http://cyh199910.gitee.io/zhuzhu/
+
+day07使用react制作GitHub热门项目查询：https://cloudhao1999.github.io/train/day07/githublist/build/index.html
