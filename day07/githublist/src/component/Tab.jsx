@@ -79,12 +79,14 @@ class Tab extends React.Component {
     const tabStyle = {
       marginTop: "14px",
       marginBottom: "38px",
+      width:"100vw"
     };
     const titleStyle = {
         fontSize:"25px",
         fontWeight:"500",
         paddingTop:"20px",
-        display:"block"
+        display:"block",
+        width:"100vw"
     }
     return (
       <div>
@@ -132,7 +134,7 @@ class Tab extends React.Component {
               );
             })
           ) : (
-            <div>刷新中...</div>
+            <div >刷新中...</div>
           )}
         </div>
       </div>
