@@ -39,6 +39,7 @@ class Tab extends React.Component {
       tabUrl: "q=stars:%3E11&sort=stars&order=desc&type=Repositories",
       url: "https://api.github.com/search/repositories?",
       githubData: [],
+      count: 0,
     };
   }
 
@@ -55,6 +56,8 @@ class Tab extends React.Component {
       tabName: name,
       tabUrl: url,
     });
+    localStorage.setItem("name", name);
+    localStorage.setItem("url", url);
     setTimeout(() => {
       this.FetchGit();
     }, 200);
@@ -64,9 +67,26 @@ class Tab extends React.Component {
     this.setState({
       githubData: [],
     });
+    if (this.state.count === 0) {
+      console.log(localStorage.getItem("name"));
+      const res = await axios.get(this.state.url + localStorage.getItem("url"));
+      this.setState({
+        githubData: res.data.items.slice(0,10),
+        count: this.state.count + 1,
+        name: localStorage.getItem("name"),
+        tabUrl: localStorage.getItem("url"),
+      });
+      const filterOption = document.getElementById(localStorage.getItem("name"))
+      if (filterOption) {
+        document
+          .querySelectorAll(".tab-list.active")
+          .forEach((btn) => btn.classList.remove("active"));
+          filterOption.classList.add("active");
+      }
+    }
     const res = await axios.get(this.state.url + this.state.tabUrl);
     this.setState({
-      githubData: res.data.items,
+      githubData: res.data.items.slice(0,10),
     });
   }
 
@@ -79,21 +99,21 @@ class Tab extends React.Component {
     const tabStyle = {
       marginTop: "14px",
       marginBottom: "18px",
-      width:"100vw"
+      width: "100vw",
     };
     const titleStyle = {
-        fontSize:"25px",
-        fontWeight:"500",
-        paddingTop:"20px",
-        display:"block",
-        width:"100vw"
-    }
+      fontSize: "25px",
+      fontWeight: "500",
+      paddingTop: "20px",
+      display: "block",
+      width: "100vw",
+    };
     return (
       <div>
         <span style={titleStyle}>Github热门项目</span>
         <div style={tabStyle}>
           <button
-            className="tab-list active"
+            className="tab-list"
             data-filter="All"
             onClick={(e) =>
               this.switchTab(e, {
@@ -110,6 +130,7 @@ class Tab extends React.Component {
                 key={index}
                 className="tab-list"
                 data-filter={list.name}
+                id={list.name}
                 onClick={(e) => this.switchTab(e, list)}
               >
                 {list.name}
@@ -134,7 +155,7 @@ class Tab extends React.Component {
               );
             })
           ) : (
-            <div >刷新中...</div>
+            <div>刷新中...</div>
           )}
         </div>
       </div>
