@@ -63,31 +63,53 @@ class Tab extends React.Component {
     }, 200);
   };
 
+  //愚蠢的方法233
   async FetchGit() {
     this.setState({
       githubData: [],
     });
     if (this.state.count === 0) {
-      console.log(localStorage.getItem("name"));
-      const res = await axios.get(this.state.url + localStorage.getItem("url"));
-      this.setState({
-        githubData: res.data.items.slice(0,10),
-        count: this.state.count + 1,
-        name: localStorage.getItem("name"),
-        tabUrl: localStorage.getItem("url"),
-      });
-      const filterOption = document.getElementById(localStorage.getItem("name"))
-      if (filterOption) {
-        document
-          .querySelectorAll(".tab-list.active")
-          .forEach((btn) => btn.classList.remove("active"));
+      const name = localStorage.getItem("name");
+      if (name) {
+        const res = await axios.get(
+          this.state.url + localStorage.getItem("url")
+        );
+        this.setState({
+          githubData: res.data.items.slice(0, 10),
+          count: this.state.count + 1,
+          name: localStorage.getItem("name"),
+          tabUrl: localStorage.getItem("url"),
+        });
+        const filterOption = document.getElementById(
+          localStorage.getItem("name")
+        );
+        if (filterOption) {
+          document
+            .querySelectorAll(".tab-list.active")
+            .forEach((btn) => btn.classList.remove("active"));
           filterOption.classList.add("active");
+        }
+      } else {
+        const res = await axios.get(this.state.url + this.state.tabUrl);
+        this.setState({
+          githubData: res.data.items.slice(0, 10),
+        });
+        const filterOption = document.getElementById(
+          'All'
+        );
+        if (filterOption) {
+          document
+            .querySelectorAll(".tab-list.active")
+            .forEach((btn) => btn.classList.remove("active"));
+          filterOption.classList.add("active");
+        }
       }
+    }else{
+      const res = await axios.get(this.state.url + this.state.tabUrl);
+        this.setState({
+          githubData: res.data.items.slice(0, 10),
+        });
     }
-    const res = await axios.get(this.state.url + this.state.tabUrl);
-    this.setState({
-      githubData: res.data.items.slice(0,10),
-    });
   }
 
   componentDidMount() {
@@ -115,6 +137,7 @@ class Tab extends React.Component {
           <button
             className="tab-list"
             data-filter="All"
+            id="All"
             onClick={(e) =>
               this.switchTab(e, {
                 name: "All",
