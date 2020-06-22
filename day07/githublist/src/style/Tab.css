@@ -38,12 +38,12 @@ html{
   overflow: hidden;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1220px) {
   .list-content{
-    width: 900px;
+    width: 1000px;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   .list-content{
     width: 800px;
   }
