@@ -91,11 +91,15 @@ html {
 .coffee-content .details{
   font-size: 18px;
   font-weight: 100;
+  text-indent: 2em;
 }
 .coffee-content .details::first-letter {
   font-size: 150%;
   font-weight: bold;
   color: red;
+}
+tr td:last-child::before{
+  content: '￥';
 }
 .coffee-content img {
   width: 20%;
