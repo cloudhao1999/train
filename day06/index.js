@@ -1,6 +1,6 @@
 const headerEl = document.querySelector("header");
 const scrollToTop = document.querySelector(".scrollToTop");
-window,
+window.
   addEventListener("scroll", () => {
     let height = headerEl.getBoundingClientRect().height;
 
