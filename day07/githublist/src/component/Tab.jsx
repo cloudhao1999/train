@@ -168,7 +168,7 @@ class TabCom extends React.Component {
           })}
         </div>
         <div className="list-content">
-          {githubData ? (
+          {githubData.length > 0 ? (
             githubData.map((item, index) => {
               return (
                 <GithubItem
@@ -193,7 +193,6 @@ class TabCom extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     ...state,
   };

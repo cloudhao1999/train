@@ -14,10 +14,8 @@ const clearGitHubDataList = () =>({
 function *getGitHubDataListAsync(){
     while(true){
         const action = yield take('setGitHubDataListSaga');
-        console.log(action);
         yield put(clearGitHubDataList())
         const res = yield call(()=>getGitHubList(action.url))
-        console.log(res.data);
         yield put(setGitHubDataList(res.data.items))
     }
 }
