@@ -10,10 +10,6 @@ import {
 import "../style/GithubItem.css";
 
 class GithubItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   ToGithubPage = () => {
     window.location.href = this.props.htmlUrl;
   };
@@ -70,7 +66,7 @@ class GithubItem extends React.Component {
         onClick={this.ToGithubPage}
       >
         <span style={titleStyle}>#{listNum}</span>
-        <img src={avatar} alt="" style={imgStyle} />
+        <img data-src={avatar} alt="" style={imgStyle} className="lazyload"/>
         <p style={nameStyle}>{name}</p>
         <div style={itemDetStyle}>
           <div>
